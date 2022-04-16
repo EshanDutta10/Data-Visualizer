@@ -15,12 +15,17 @@ const HealthForm = ({ data, setData }) => {
         <div style={{ padding: "0 20px" }}>
           <Slider
             aria-label="Health Edu Slider"
-            defaultValue={8}
+            value={data.h_edu}
             step={1}
             valueLabelDisplay="auto"
             marks={sliderValues}
             max={16}
             valueLabelFormat={valueLabelFormat}
+            onChange={(e, newVal) => {
+              if (typeof newVal === "number") {
+                setData({ ...data, h_edu: newVal });
+              }
+            }}
           />
         </div>
       </p>
@@ -29,12 +34,17 @@ const HealthForm = ({ data, setData }) => {
         <div style={{ padding: "0 20px" }}>
           <Slider
             aria-label="Custom marks"
-            defaultValue={8}
+            value={data.h_eco}
             step={1}
             valueLabelDisplay="auto"
             marks={sliderValues}
             max={16}
             valueLabelFormat={valueLabelFormat}
+            onChange={(e, newVal) => {
+              if (typeof newVal === "number") {
+                setData({ ...data, h_eco: newVal });
+              }
+            }}
           />
         </div>
       </p>

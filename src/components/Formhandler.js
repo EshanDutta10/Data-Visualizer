@@ -8,7 +8,7 @@ const Formhandler = ({ step, data, setData }) => {
     <div>
       {step == 0 && <CrimeForm data={data} setData={setData} />}
       {step == 1 && <HealthForm data={data} setData={setData} />}
-      {step == 2 && <EducationForm />}
+      {step == 2 && <EducationForm data={data} setData={setData} />}
     </div>
   );
 };
